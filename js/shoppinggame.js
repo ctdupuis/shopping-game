@@ -48,6 +48,11 @@ Product.prototype.getDetails = function() {
 }
 
 // Define the MagicProduct class here
+function MagicProduct(id, name, price, expiryDate, points, isBonus) {
+    Product.call(this, id, name, price, expiryDate);
+    this.points = points;
+    this.isBonus = isBonus;
+}
 
 // Establish inheritance between Product() & MagicProduct() here
 
