@@ -58,6 +58,23 @@ function MagicProduct(id, name, price, expiryDate, points, isBonus) {
 MagicProduct.prototype = Object.create(Product.prototype)
 
 // Define Rating class here
+class Rating {
+    constructor() {
+        this.rate = "";
+    }
+
+    set rating(value) {
+        if (value > 1 && value <= 4) {
+            this.rate = "OK"
+        } else if (value >= 5 && value <= 7) {
+            this.rate = "GOOD"
+        } else if (value > 7) {
+            this.rate = 'EXCEPTIONAL'
+        } else {
+            this.rate = 'BAD'
+        }
+    }
+}
 
 // Complete the loadProducts function
 const loadProducts = (map, prodId) => {
