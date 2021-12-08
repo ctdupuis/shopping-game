@@ -398,9 +398,9 @@ function init(data) {
     };
 
     // Uncomment this function once you fully implement the game to be able to run it
-    // (function setGameCompleteFlag(){
-    //     gameComplete = true;
-    // })();
+    (function setGameCompleteFlag(){
+        gameComplete = true;
+    })();
 
     function main() {
         let products = loadMasterData();
