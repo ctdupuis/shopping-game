@@ -1,8 +1,8 @@
 let gameComplete = false;
 // Define the three constants here
-const score = 0;
-const name = "unknown";
-const items = 0;
+let score = 0;
+let name = "unknown";
+let items = 0;
 
 // Define the player object here
 let player = {
@@ -272,6 +272,14 @@ const findPointsForExpDate = (prod) => {
 const calculatePoints = (prod, tBill) => {
     let pointsToBill = findPointsToBill(Math.round(tBill));
     let pointsForExpDate = findPointsForExpDate(prod);
+    player.score = player.score + pointsToBill + pointsForExpDate;
+    if (prod instanceof MagicProduct) {
+        if (prod.isBonus) {
+            player.addPoints(prod.points)
+        } else {
+            player.deductPoints(prod.points)
+        }
+    }
 };
 
 // Complete this function
